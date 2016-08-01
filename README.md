@@ -1,3 +1,5 @@
+
+
 # hubot-ibmcloud-openwhisk
 
 Script package that exposes various IBM Cloud Open Whisk functionality through Hubot.
@@ -5,13 +7,13 @@ Script package that exposes various IBM Cloud Open Whisk functionality through H
 ## Getting Started
   * [Usage](#usage)
   * [Commands](#commands)
-  * [Open Whisk Integration](#integration)
+  * [Open Whisk Integration](#openwhisk-integration)
   * [Hubot Adapter Setup](#hubot-adapter-setup)
   * [Development](#development)
   * [License](#license)
   * [Contribute](#contribute)
 
-## Usage <a id="usage"></a>
+## Usage
 
 If you are new to Hubot visit the [getting started](https://hubot.github.com/docs/) content to get a basic bot up and running.  Next, follow these steps for adding this external script into your hubot:
 
@@ -31,7 +33,7 @@ HUBOT_OPENWHISK_TOKEN=<Basic authentication token for Bluemix OpenWhisk>
 6. Start up your bot & off to the races!
 
 
-## Commands <a id="commands"></a>
+## Commands
 
 - `hubot openwhisk invoke action [action]` - Invokes an OpenWhisk action in the active namespace.
 - `hubot openwhisk list|show namespaces` - Lists all of the OpenWhisk namespaces.
@@ -41,19 +43,19 @@ HUBOT_OPENWHISK_TOKEN=<Basic authentication token for Bluemix OpenWhisk>
 - `hubot openwhisk help` - Show available OpenWhisk commands.
 
 
-## Open Whisk Integration <a id="integration"></a>
+## OpenWhisk Integration
 
 Follow the instructions for [getting started with Bluemix OpenWhisk](https://console.ng.bluemix.net/docs/openwhisk/index.html) to obtain the authentication token. This token is the Basic Authenticaton header without the "Basic " prefix.
 
-## Hubot Adapter Setup <a id="hubot-adapter-setup"></a>
+## Hubot Adapter Setup
 
 Hubot supports a variety of adapters to connect to popular chat clients.  For more feature rich experiences you can setup the following adapters:
-- [Slack setup](./docs/adapters/slack.md)
-- [Facebook Messenger setup](./docs/adapters/facebook.md)
+- [Slack setup](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-openwhisk/blob/master/docs/adapters/slack.md)
+- [Facebook Messenger setup](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-openwhisk/blob/master/docs/adapters/facebook.md)
 
-## Development <a id="development"></a>
+## Development
 
-Please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) before starting any work.  Steps for running this script for development purposes:
+Please refer to the [CONTRIBUTING.md](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-openwhisk/blob/master/CONTRIBUTING.md) before starting any work.  Steps for running this script for development purposes:
 
 ### Configuration Setup
 
@@ -82,13 +84,13 @@ Hubot supports a variety of adapters to connect to popular chat clients.
 
 If you just want to use:
  - Terminal: run `npm run start`
- - [Slack: link to setup instructions](docs/adapters/slack.md)
- - [Facebook Messenger: link to setup instructions](docs/adapters/facebook.md)
+ - [Slack: link to setup instructions](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-openwhisk/blob/master/docs/adapters/slack.md)
+ - [Facebook Messenger: link to setup instructions](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-openwhisk/blob/master/docs/adapters/facebook.md)
 
-## License <a id="license"></a>
+## License
 
-See [LICENSE.txt](./LICENSE.txt) for license information.
+See [LICENSE.txt](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-openwhisk/blob/master/LICENSE.txt) for license information.
 
-## Contribute <a id="contribute"></a>
+## Contribute
 
-Please check out our [Contribution Guidelines](./CONTRIBUTING.md) for detailed information on how you can lend a hand.
+Please check out our [Contribution Guidelines](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-openwhisk/blob/master/CONTRIBUTING.md) for detailed information on how you can lend a hand.
