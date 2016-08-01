@@ -1,0 +1,88 @@
+{   "name": "IBMcloudOpenwhisk",
+    "version": "0.0.1",
+    "classes": [
+        {
+            "class": "openwhisk.help",
+            "emittarget": "openwhisk.help",
+            "texts": [
+				"I want help with openwhisk.",
+		  		"Can you help me with openwhisk?",
+		  		"Please help me with openwhisk.",
+		  		"help openwhisk"
+            ]
+        },
+        {
+            "class": "openwhisk.action.list",
+            "emittarget": "openwhisk.action.list",
+            "texts": [
+                "Show my openwhisk actions",
+                "What are my openwhisk actions?",
+                "List all my actions"
+            ]
+        },
+        {
+            "class": "openwhisk.action.invoke",
+            "emittarget": "openwhisk.action.invoke",
+            "texts": [
+                "Invoke openwhisk action",
+                "invoke action",
+				"Run openwhisk action",
+                "Run action"
+            ],
+			"parameters" : [
+				{
+					"name": "action",
+					"type": "entity",
+					 "prompt": "OK. What is the action you want to invoke?"
+				 }
+			 ]
+        },
+        {
+            "class": "openwhisk.namepace.list",
+            "emittarget": "openwhisk.namespace.list",
+            "texts": [
+                "Show my openwhisk namespaces",
+                "What are my namespaces?",
+                "List all my namespaces",
+				"show my current namespaces"
+            ]
+        },
+        {
+            "class": "openwhisk.namespace.get",
+            "emittarget": "openwhisk.namespace.get",
+            "texts": [
+                "What namespace am I in?",
+                "Current openwhisk space?",
+                "what's the current namespace",
+                "show my current namespace",
+                "show my namespace"
+            ]
+        },
+        {
+            "class": "openwhisk.namespace.set",
+            "emittarget": "openwhisk.namespace.set",
+            "texts": [
+                "Set my namespace to",
+                "Change my openwhisk namespace",
+                "Move namespace"
+            ],
+			"parameters" : [
+				{
+					"name": "namespace",
+					"type": "entity",
+					 "prompt": "OK. What is the namespace you want to set?"
+				 }
+			 ]
+        }
+    ],
+	"parameter.values" : [
+		{
+			"name": "action",
+			"values": []
+		},
+		{
+			"name": "namespace",
+			"values": []
+		}
+	]
+}

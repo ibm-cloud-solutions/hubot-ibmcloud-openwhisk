@@ -1,0 +1,26 @@
+{
+   "help.openwhisk.invoke.action": "Invokes an OpenWhisk action in the active namespace.",
+   "help.openwhisk.namespace": "Gets current OpenWhisk namespace.",
+   "help.openwhisk.set.namespace": "Sets the active OpenWhisk namespace.",
+   "help.openwhisk.show.actions": "Lists all of the OpenWhisk actions in the active namespace.",
+   "help.openwhisk.show.namespaces": "Lists all of the OpenWhisk namespaces.",
+
+   "openwhisk.invoke.failure": "Failed to invoke Openwhisk action *%s*.",
+   "openwhisk.nlc.action.handling": "I have trouble handling actions that include spaces, try renaming the action or using *openwhisk invoke action [action]*",
+   "openwhisk.invoke.in.progress": "I will invoke your Openwhisk action *%s* now.",
+   "openwhisk.invoke.success": "Openwhisk action *%s* successfully invoked.",
+   "openwhisk.namespace.current": "You're using the *%s* namespace.",
+   "openwhisk.namespace.new": "*%s* is now your current namespace.",
+   "openwhisk.namespace.none": "I cound't find any Openwhisk namespaces.",
+   "openwhisk.namespace.not.found": "You don't have an Openwhisk namespace called *%s*.",
+   "openwhisk.namespaces.in.progress": "I will get a list of the Openwhisk namespaces.",
+   "openwhisk.namespaces.failure": "Failed to list namespaces: >%s",
+   "openwhisk.namespaces.not.found": "I couldn't find any namespaces.",
+   "openwhisk.show.actions": "Here is the list of actions for the *%s* namespace.",
+   "openwhisk.show.failure": "Failed to list actions for *%s* namespace.",
+   "openwhisk.show.in.progress": "I will get your list of Openwhisk actions for space *%s*.",
+   "openwhisk.show.not.found": "I couldn't find any actions in the *%s* namespace.",
+
+   "cognitive.parse.problem.action": "I'm having problems understanding the action name. To invoke an action use *openwhisk invoke action [action]*",
+   "cognitive.parse.problem.namespace": "I'm having problems understanding the provided namespace. To set the namespace use *openwhisk set namespace [namespace]*"
+}
