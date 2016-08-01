@@ -1,4 +1,7 @@
-
+[![Build Status](https://travis-ci.org/ibm-cloud-solutions/hubot-ibmcloud-openwhisk.svg?branch=master)](https://travis-ci.org/ibm-cloud-solutions/hubot-ibmcloud-openwhisk)
+[![Coverage Status](https://coveralls.io/repos/github/ibm-cloud-solutions/hubot-ibmcloud-openwhisk/badge.svg?branch=cleanup)](https://coveralls.io/github/ibm-cloud-solutions/hubot-ibmcloud-openwhisk?branch=cleanup)
+[![Dependency Status](https://dependencyci.com/github/ibm-cloud-solutions/hubot-ibmcloud-openwhisk/badge)](https://dependencyci.com/github/ibm-cloud-solutions/hubot-ibmcloud-openwhisk)
+[![npm](https://img.shields.io/npm/v/hubot-ibmcloud-openwhisk.svg?maxAge=2592000)](https://www.npmjs.com/package/hubot-ibmcloud-openwhisk)
 
 # hubot-ibmcloud-openwhisk
 
