@@ -52,7 +52,7 @@
         },
         {
             "class": "openwhisk.namespace.get",
-			"description": "Show current OpenWisk namespace",
+            "description": "Show current OpenWisk namespace",
             "emittarget": "openwhisk.namespace.get",
             "texts": [
                 "What namespace am I in?",
