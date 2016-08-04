@@ -3,16 +3,17 @@
     "classes": [
         {
             "class": "openwhisk.help",
+            "description": "Help with OpenWisk",
             "emittarget": "openwhisk.help",
             "texts": [
-				"I want help with openwhisk.",
+				"Help with openwhisk.",
 		  		"Can you help me with openwhisk?",
-		  		"Please help me with openwhisk.",
 		  		"help openwhisk"
             ]
         },
         {
             "class": "openwhisk.action.list",
+            "description": "List OpenWisk actions",
             "emittarget": "openwhisk.action.list",
             "texts": [
                 "Show my openwhisk actions",
@@ -22,6 +23,7 @@
         },
         {
             "class": "openwhisk.action.invoke",
+            "description": "Invoke OpenWisk action",
             "emittarget": "openwhisk.action.invoke",
             "texts": [
                 "Invoke openwhisk action",
@@ -39,6 +41,7 @@
         },
         {
             "class": "openwhisk.namepace.list",
+            "description": "List OpenWisk namespaces",
             "emittarget": "openwhisk.namespace.list",
             "texts": [
                 "Show my openwhisk namespaces",
@@ -49,6 +52,7 @@
         },
         {
             "class": "openwhisk.namespace.get",
+			"description": "Show current OpenWisk namespace",
             "emittarget": "openwhisk.namespace.get",
             "texts": [
                 "What namespace am I in?",
@@ -60,6 +64,7 @@
         },
         {
             "class": "openwhisk.namespace.set",
+            "description": "Change OpenWisk namespace",
             "emittarget": "openwhisk.namespace.set",
             "texts": [
                 "Set my namespace to",
