@@ -34,8 +34,10 @@
 			"parameters" : [
 				{
 					"name": "action",
+                    "title": "openwhisk action",
 					"type": "entity",
-					 "prompt": "OK. What is the action you want to invoke?"
+					 "prompt": "OK. What is the action you want to invoke?",
+                    "entityfunction": "funcaction"
 				 }
 			 ]
         },
@@ -74,8 +76,10 @@
 			"parameters" : [
 				{
 					"name": "namespace",
+                    "title": "openwhisk namespace",
 					"type": "entity",
-					 "prompt": "OK. What is the namespace you want to set?"
+					 "prompt": "OK. What is the namespace you want to set?",
+                    "entityfunction": "funcnamespace"
 				 }
 			 ]
         }

@@ -25,6 +25,7 @@ var TAG = path.basename(__filename);
 
 const wsk = require('../lib/wsk');
 const activity = require('hubot-ibmcloud-activity-emitter');
+const entities = require('../lib/openwhisk.entities');
 
 // --------------------------------------------------------------
 // i18n (internationalization)
@@ -47,6 +48,9 @@ const SPACE = /openwhisk\s+namespace/i;
 const SET_SPACE = /openwhisk\s+(set|use)\s+namespace\s+(.*)/i;
 
 module.exports = (robot) => {
+
+	// Register entity handling functions
+	entities.registerEntityFunctions();
 
 	robot.on('openwhisk.namespace.get', (res) => {
 		robot.logger.debug(`${TAG}: openwhisk.namespace.get Natural Language match.`);
