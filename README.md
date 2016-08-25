@@ -12,7 +12,7 @@ Script package that exposes various IBM Cloud Open Whisk functionality through H
   * [Commands](#commands)
   * [Open Whisk Integration](#openwhisk-integration)
   * [Hubot Adapter Setup](#hubot-adapter-setup)
-  *	[Cognitive Setup](#cognitive-setup)
+  * [Cognitive Setup](#cognitive-setup)
   * [Development](#development)
   * [License](#license)
   * [Contribute](#contribute)
