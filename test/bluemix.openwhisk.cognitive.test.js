@@ -189,4 +189,29 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 		});
 	});
 
+	context('verify entity functions', function() {
+
+		it('should retrieve set of actions', function(done) {
+			const entities = require('../src/lib/openwhisk.entities');
+			var res = { message: {text: '', user: {id: 'mimiron'}}, response: room };
+			entities.getActions(room.robot, res, 'action', {}).then(function(actions) {
+				expect(actions.length).to.eql(2);
+				done();
+			}).catch(function(error) {
+				done(error);
+			});
+		});
+
+		it('should retrieve set of namespaces', function(done) {
+			const entities = require('../src/lib/openwhisk.entities');
+			var res = { message: {text: '', user: {id: 'mimiron'}}, response: room };
+			entities.getNamespaces(room.robot, res, 'namespace', {}).then(function(namespaces) {
+				expect(namespaces.length).to.eql(3);
+				done();
+			}).catch(function(error) {
+				done(error);
+			});
+		});
+	});
+
 });

@@ -3,7 +3,7 @@
   "version": "0.0.19",
   "description": "hubot for IBM Cloud Open Whisk interactions",
   "main": "index.js",
-  "respository": {
+  "repository": {
     "url": "https://github.com/ibm-cloud-solutions/hubot-ibmcloud-openwhisk",
     "type": "git"
   },
@@ -57,7 +57,7 @@
     "index.js"
   ],
   "dependencies": {
-    "hubot-ibmcloud-cognitive-lib": ">=0.0.18",
+    "hubot-ibmcloud-cognitive-lib": ">=0.0.37",
     "hubot-ibmcloud-activity-emitter": ">=0.0.2",
     "hubot-ibmcloud-utils": ">=0.0.6",
     "i18n-2": "^0.6.3",
