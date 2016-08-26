@@ -1,6 +1,6 @@
 {
   "name": "hubot-ibmcloud-openwhisk",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "hubot for IBM Cloud Open Whisk interactions",
   "main": "index.js",
   "repository": {
