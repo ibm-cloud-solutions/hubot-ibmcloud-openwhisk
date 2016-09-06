@@ -1,6 +1,6 @@
 {
   "name": "hubot-ibmcloud-openwhisk",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "hubot for IBM Cloud Open Whisk interactions",
   "main": "index.js",
   "repository": {
@@ -53,7 +53,7 @@
     "hubot-ibmcloud-utils": ">=0.0.14",
     "i18n-2": "^0.6.3",
     "lodash": "^4.13.1",
-    "request": "^2.74.0"    
+    "request": "^2.74.0"
   },
   "engines": {
     "node": ">= 4.2.0"
@@ -62,6 +62,5 @@
     "src",
     "index.js"
   ],
-  "dependencies": {
-  }
+  "dependencies": {}
 }
