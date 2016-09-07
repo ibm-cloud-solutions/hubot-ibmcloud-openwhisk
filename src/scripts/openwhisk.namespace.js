@@ -20,8 +20,8 @@
   */
 'use strict';
 
-var path = require('path');
-var TAG = path.basename(__filename);
+const path = require('path');
+const TAG = path.basename(__filename);
 
 const wsk = require('../lib/wsk');
 const activity = require('hubot-ibmcloud-activity-emitter');
@@ -32,7 +32,7 @@ const entities = require('../lib/openwhisk.entities');
 // It will read from a peer messages.json file.  Later, these
 // messages can be referenced throughout the module.
 // --------------------------------------------------------------
-var i18n = new (require('i18n-2'))({
+const i18n = new (require('i18n-2'))({
 	locales: ['en'],
 	extension: '.json',
 	// Add more languages to the list of locales when the files are created.
@@ -96,7 +96,7 @@ module.exports = (robot) => {
 		robot.logger.info(`${TAG}: Asynch call using openwhisk library to get openwhisk namespaces.`);
 		wsk.openwhisk.getNamespaces().then((resultJson) => {
 			robot.logger.info(`${TAG}: resultJson: ` + JSON.stringify(resultJson));
-			var found = false;
+			let found = false;
 			resultJson.forEach(function(namespace) {
 				if (name === namespace) {
 					found = true;

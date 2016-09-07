@@ -13,7 +13,7 @@ const mockUtils = require('./mock.utils.wsk.js');
 const mockCFUtils = require('./mock.utils.cf.js');
 const mockESUtils = require('./mock.utils.es.js');
 
-var i18n = new (require('i18n-2'))({
+const i18n = new (require('i18n-2'))({
 	locales: ['en'],
 	extension: '.json',
 	// Add more languages to the list of locales when the files are created.
@@ -54,7 +54,7 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 				}
 			});
 
-			var res = { message: {text: 'Show my namespaces'}, user: {id: 'anId'}, response: room };
+			let res = { message: {text: 'Show my namespaces'}, user: {id: 'anId'}, response: room };
 			room.robot.emit('openwhisk.namespace.list', res, {});
 		});
 	});
@@ -67,7 +67,7 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 				done();
 			});
 
-			var res = { message: {text: 'Show my current namespace', user: {id: 'anId'}}, response: room };
+			let res = { message: {text: 'Show my current namespace', user: {id: 'anId'}}, response: room };
 			room.robot.emit('openwhisk.namespace.get', res, {});
 		});
 	});
@@ -80,7 +80,7 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 				done();
 			});
 
-			var res = { message: {text: 'Change my current namespace to unknownSpace'}, user: {id: 'anId'}, response: room };
+			let res = { message: {text: 'Change my current namespace to unknownSpace'}, user: {id: 'anId'}, response: room };
 			room.robot.emit('openwhisk.namespace.set', res, {namespace: 'unknownSpace'});
 		});
 	});
@@ -93,7 +93,7 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 				done();
 			});
 
-			var res = { message: {text: 'Change my current namespace to testOrg_testSpace', user: {id: 'anId'}}, response: room };
+			let res = { message: {text: 'Change my current namespace to testOrg_testSpace', user: {id: 'anId'}}, response: room };
 			room.robot.emit('openwhisk.namespace.set', res, {namespace: 'testOrg_testSpace'});
 		});
 
@@ -106,7 +106,7 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 				}
 			});
 
-			var res = { message: {text: 'set namespace', user: {id: 'mimiron'}}, response: room };
+			let res = { message: {text: 'set namespace', user: {id: 'mimiron'}}, response: room };
 			room.robot.emit('openwhisk.namespace.set', res, {});
 		});
 	});
@@ -121,7 +121,7 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 				}
 			});
 
-			var res = { message: {text: 'Show my openwhisk actions', user: {id: 'anId'}}, response: room };
+			let res = { message: {text: 'Show my openwhisk actions', user: {id: 'anId'}}, response: room };
 			room.robot.emit('openwhisk.action.list', res, {});
 
 		});
@@ -137,7 +137,7 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 				}
 			});
 
-			var res = { message: {text: 'invoke openwhisk action action1', user: {id: 'anId'}}, response: room };
+			let res = { message: {text: 'invoke openwhisk action action1', user: {id: 'anId'}}, response: room };
 			room.robot.emit('openwhisk.action.invoke', res, {action: 'action1'});
 		});
 
@@ -150,7 +150,7 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 				}
 			});
 
-			var res = { message: {text: 'I want to invoke action', user: {id: 'mimiron'}}, response: room };
+			let res = { message: {text: 'I want to invoke action', user: {id: 'mimiron'}}, response: room };
 			room.robot.emit('openwhisk.action.invoke', res, {});
 		});
 	});
@@ -165,7 +165,7 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 				}
 			});
 
-			var res = { message: {text: 'invoke openwhisk action actionUnknown', user: {id: 'anId'}}, response: room };
+			let res = { message: {text: 'invoke openwhisk action actionUnknown', user: {id: 'anId'}}, response: room };
 			room.robot.emit('openwhisk.action.invoke', res, {action: 'actionUnknown'});
 		});
 	});
@@ -184,7 +184,7 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 				}
 			});
 
-			var res = { message: {text: 'help openwhisk', user: {id: 'anId'}}, response: room };
+			let res = { message: {text: 'help openwhisk', user: {id: 'anId'}}, response: room };
 			room.robot.emit('openwhisk.help', res, {});
 		});
 	});
@@ -193,7 +193,7 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 
 		it('should retrieve set of actions', function(done) {
 			const entities = require('../src/lib/openwhisk.entities');
-			var res = { message: {text: '', user: {id: 'mimiron'}}, response: room };
+			let res = { message: {text: '', user: {id: 'mimiron'}}, response: room };
 			entities.getActions(room.robot, res, 'action', {}).then(function(actions) {
 				expect(actions.length).to.eql(2);
 				done();
@@ -204,7 +204,7 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 
 		it('should retrieve set of namespaces', function(done) {
 			const entities = require('../src/lib/openwhisk.entities');
-			var res = { message: {text: '', user: {id: 'mimiron'}}, response: room };
+			let res = { message: {text: '', user: {id: 'mimiron'}}, response: room };
 			entities.getNamespaces(room.robot, res, 'namespace', {}).then(function(namespaces) {
 				expect(namespaces.length).to.eql(3);
 				done();

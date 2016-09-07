@@ -50,7 +50,7 @@ class OpenWhisk {
 	 */
 	getNamespaces() {
 		// GET api/v1/namespaces
-		var options = {
+		let options = {
 			method: 'GET',
 			url: this.endpoint + '/api/v1/namespaces',
 			headers: {
@@ -58,14 +58,14 @@ class OpenWhisk {
 				Accept: 'application/json'
 			}
 		};
-		var promise = new Promise((resolve, reject) => {
+		let promise = new Promise((resolve, reject) => {
 			if (env.openwhiskToken) {
 				request(options, function(error, response, body) {
 					if (error) {
 						reject(body);
 					}
 					else if (body) {
-						var resultJson = JSON.parse(body);
+						let resultJson = JSON.parse(body);
 						if (resultJson && resultJson.error) {
 							reject(getErrorResponse(resultJson.error));
 						}
@@ -91,7 +91,7 @@ class OpenWhisk {
 	getAllActions(namespace) {
 		// GET api/v1/namespaces/{namespace}/actions
 
-		var options = {
+		let options = {
 			method: 'GET',
 			url: this.endpoint + '/api/v1/namespaces/' + namespace + '/actions',
 			headers: {
@@ -99,14 +99,14 @@ class OpenWhisk {
 				Accept: 'application/json'
 			}
 		};
-		var promise = new Promise((resolve, reject) => {
+		let promise = new Promise((resolve, reject) => {
 			if (env.openwhiskToken) {
 				request(options, function(error, response, body) {
 					if (error) {
 						reject(body);
 					}
 					else {
-						var resultJson = JSON.parse(body);
+						let resultJson = JSON.parse(body);
 						if (resultJson && resultJson.error) {
 							reject(getErrorResponse(resultJson.error));
 						}
@@ -133,7 +133,7 @@ class OpenWhisk {
 	 */
 	invoke(action, namespace, param) {
 		// POST /api/v1/namespaces/{namespace}/actions/{actionName}
-		var options = {
+		let options = {
 			method: 'POST',
 			url: this.endpoint + '/api/v1/namespaces/' + namespace + '/actions/' + action,
 			headers: {
@@ -145,7 +145,7 @@ class OpenWhisk {
 			options.json = true;
 			options.body = param;
 		}
-		var promise = new Promise((resolve, reject) => {
+		let promise = new Promise((resolve, reject) => {
 			if (env.openwhiskToken) {
 				request(options, function(error, response, body) {
 					if (error) {
