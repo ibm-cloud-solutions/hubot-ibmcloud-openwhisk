@@ -49,7 +49,7 @@ HUBOT_OPENWHISK_TOKEN=<Basic authentication token for Bluemix OpenWhisk>
 
 ## OpenWhisk Integration
 
-Follow the instructions for [getting started with Bluemix OpenWhisk](https://console.ng.bluemix.net/docs/openwhisk/index.html) to obtain the authentication token. This token is the Basic Authenticaton header without the "Basic " prefix.
+For more in-depth information about using OpenWhisk try the [getting started with Bluemix OpenWhisk](https://console.ng.bluemix.net/docs/openwhisk/index.html) documentation. See the following [documentation](https://github.com/ibm-cloud-solutions/hubot-ibmcloud-openwhisk/blob/master/docs/openwhisk.md) for obtaining the Base64 encoded token used by the bot.
 
 ## Hubot Adapter Setup
 
