@@ -13,7 +13,7 @@ const NAMESPACE = 'IBMcloudOpenwhisk';
 const PARAM_ACTION = 'action';
 const PARAM_NAMESPACE = 'namespace';
 
-var functionsRegistered = false;
+let functionsRegistered = false;
 
 
 function buildGlobalName(parameterName) {
@@ -35,7 +35,7 @@ function getActions(robot, res, parameterName, parameters) {
 	return new Promise(function(resolve, reject) {
 		const namespace = wsk.openwhisk.activeNamespace(robot, res);
 		wsk.openwhisk.getAllActions(namespace).then((result) => {
-			var actions = result.map(function(action){
+			let actions = result.map(function(action){
 				return action.name;
 			});
 			nlcconfig.updateGlobalParameterValues(buildGlobalName(PARAM_ACTION), actions);

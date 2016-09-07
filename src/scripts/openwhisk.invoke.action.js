@@ -20,8 +20,8 @@
   */
 'use strict';
 
-var path = require('path');
-var TAG = path.basename(__filename);
+const path = require('path');
+const TAG = path.basename(__filename);
 
 const wsk = require('../lib/wsk');
 const entities = require('../lib/openwhisk.entities');
@@ -31,7 +31,7 @@ const entities = require('../lib/openwhisk.entities');
 // It will read from a peer messages.json file.  Later, these
 // messages can be referenced throughout the module.
 // --------------------------------------------------------------
-var i18n = new (require('i18n-2'))({
+const i18n = new (require('i18n-2'))({
 	locales: ['en'],
 	extension: '.json',
 	// Add more languages to the list of locales when the files are created.
@@ -75,7 +75,7 @@ module.exports = (robot) => {
 		robot.logger.debug(`${TAG}: openwhisk.action.invoke res.message.text=${res.message.text}.`);
 		const namespace = wsk.openwhisk.activeNamespace(robot, res);
 		// for now, we will not pass any params to the action
-		var body = {};
+		let body = {};
 
 		robot.logger.info(`${TAG}: Invoking openwhisk action ${actionName}`);
 		let message = i18n.__('openwhisk.invoke.in.progress', actionName);
