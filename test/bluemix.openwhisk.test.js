@@ -76,10 +76,10 @@ describe('Interacting with Openwhisk via Reg Ex', function() {
 				expect(events[0].message).to.be.eql(i18n.__('openwhisk.namespaces.in.progress'));
 				expect(events[1].attachments.length).to.eql(1);
 				expect(events[1].attachments[0].text).to.eql(`testOrg_testSpace\nnamespace1\nnamespace2`);
-
-				room.user.say('mimiron', '@hubot openwhisk list namespaces');
-				return p;
 			});
+
+			room.user.say('mimiron', '@hubot openwhisk list namespaces');
+			return p;
 		});
 	});
 
@@ -152,7 +152,7 @@ describe('Interacting with Openwhisk via Reg Ex', function() {
 		});
 	});
 
-	context('user calls `openwhisk invoke action` with invalid action', function() {
+	context('user calls `openwhisk invoke action` with unknown action', function() {
 		it('should respond with failure', function() {
 			let p = portend.twice(room.robot, 'ibmcloud.formatter').then(events => {
 				expect(events[0].message).to.be.a('string');
@@ -162,6 +162,38 @@ describe('Interacting with Openwhisk via Reg Ex', function() {
 			});
 
 			room.user.say('mimiron', '@hubot openwhisk invoke action actionUnknown');
+			return p;
+		});
+	});
+
+	context('user calls `openwhisk invoke action` with invalid action', function() {
+		it('should respond with failure', function() {
+			let p = portend.twice(room.robot, 'ibmcloud.formatter').then(events => {
+				expect(events[0].message).to.be.a('string');
+				expect(events[1].message).to.be.a('string');
+				expect(events[0].message).to.be.eql(i18n.__('openwhisk.invoke.in.progress', 'action2'));
+				expect(events[1].message).to.be.eql(i18n.__('openwhisk.invoke.failure', 'action2'));
+			});
+
+			room.user.say('mimiron', '@hubot openwhisk invoke action action2');
+			return p;
+		});
+	});
+
+	context('user calls ', function() {
+		before(function(){
+			mockUtils.setupMockErrors();
+		});
+
+		it('should respond with no actions found', function() {
+			let p = portend.twice(room.robot, 'ibmcloud.formatter').then(events => {
+				expect(events[0].message).to.be.a('string');
+				expect(events[1].message).to.be.a('string');
+				expect(events[0].message).to.be.eql(i18n.__('openwhisk.show.in.progress', 'testOrg_testSpace'));
+				expect(events[1].message).to.be.eql(i18n.__('openwhisk.show.not.found', 'testOrg_testSpace'));
+			});
+
+			room.user.say('mimiron', '@hubot openwhisk list actions');
 			return p;
 		});
 	});

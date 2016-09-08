@@ -159,20 +159,18 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 		});
 
 		it('should fail invoke an action due to missing action parameter ', function() {
-			room.robot.on('ibmcloud.formatter', (event) => {
-				let p = portend.once(room.robot, 'ibmcloud.formatter').then(events => {
-					expect(events[0].message).to.be.a('string');
-					expect(events[0].message).to.be.eql(i18n.__('cognitive.parse.problem.action'));
-				});
-
-				let res = { message: {text: 'I want to invoke action', user: {id: 'mimiron'}}, response: room };
-				room.robot.emit('openwhisk.action.invoke', res, {});
-				return p;
+			let p = portend.once(room.robot, 'ibmcloud.formatter').then(events => {
+				expect(events[0].message).to.be.a('string');
+				expect(events[0].message).to.be.eql(i18n.__('cognitive.parse.problem.action'));
 			});
+
+			let res = { message: {text: 'I want to invoke action', user: {id: 'mimiron'}}, response: room };
+			room.robot.emit('openwhisk.action.invoke', res, {});
+			return p;
 		});
 	});
 
-	context('user calls `openwhisk invoke action` with invalid action', function() {
+	context('user calls `openwhisk invoke action` with unknown action', function() {
 		it('should respond with failure', function() {
 			let p = portend.twice(room.robot, 'ibmcloud.formatter').then(events => {
 				expect(events[0].message).to.be.a('string');
@@ -183,6 +181,23 @@ describe('Interacting with Openwhisk via Natural Language -', function() {
 
 			let res = { message: {text: 'invoke openwhisk action actionUnknown', user: {id: 'anId'}}, response: room };
 			room.robot.emit('openwhisk.action.invoke', res, {action: 'actionUnknown'});
+			return p;
+		});
+	});
+
+	context('user calls `openwhisk invoke action` with invalid action', function() {
+		it('should respond with failure', function() {
+			let p = portend.thrice(room.robot, 'ibmcloud.formatter').then(events => {
+				expect(events[0].message).to.be.a('string');
+				expect(events[1].message).to.be.a('string');
+				expect(events[2].message).to.be.a('string');
+				expect(events[0].message).to.be.eql(i18n.__('openwhisk.invoke.in.progress', 'action2'));
+				expect(events[1].message).to.be.eql(i18n.__('openwhisk.invoke.failure', 'action2'));
+				expect(events[2].message).to.be.eql(i18n.__('openwhisk.nlc.action.handling'));
+			});
+
+			let res = { message: {text: 'invoke openwhisk action action2', user: {id: 'anId'}}, response: room };
+			room.robot.emit('openwhisk.action.invoke', res, {action: 'action2'});
 			return p;
 		});
 	});

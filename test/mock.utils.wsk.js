@@ -27,8 +27,20 @@ module.exports = {
 			.reply(200, testResources.openwhiskActions);
 		owScope.post(`/api/${owVersion}/namespaces/testOrg_testSpace/actions/action1`)
 			.reply(200, testResources.openwhiskAction);
-		owScope.post(`/api/${owVersion}/namespaces/namespace1/actions/action1`)
-			.reply(200, testResources.openwhiskAction);
+		owScope.post(`/api/${owVersion}/namespaces/testOrg_testSpace/actions/action2`)
+			.reply(200, {});
 
+	},
+	setupMockErrors: function(){
+		nock.cleanAll();
+		nock.disableNetConnect();
+		let owErrorScope = nock(endpoint).persist();
+
+		owErrorScope.get('/api/v1/namespaces')
+			.reply(200, testResources.openwhiskNamespaces);
+		owErrorScope.get(`/api/${owVersion}/namespaces/testOrg_testSpace/actions`)
+			.reply(500, ['Some 500 error message from Openwhisk']);
+		owErrorScope.post(`/api/${owVersion}/namespaces/testOrg_testSpace/actions/action1`)
+			.reply(500, 'Some 500 error message from Openwhisk');
 	}
 };
