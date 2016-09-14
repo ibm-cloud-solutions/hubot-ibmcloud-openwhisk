@@ -2,7 +2,8 @@ language: node_js
 node_js:
   - '4.2'
 before_install:
-  - 'npm config set registry http://registry.npmjs.org'
+  - 'npm i -g npm@2'
+#   - 'npm config set registry http://registry.npmjs.org'
 install:
   - 'npm install'
 script:
