@@ -3,7 +3,8 @@
     "classes": [
         {
             "class": "openwhisk.help",
-            "description": "Help with OpenWisk",
+            "description": "Help with OpenWhisk",
+            "confirmprompt": "Would you like help with OpenWhisk (yes or no)?",
             "emittarget": "openwhisk.help",
             "texts": [
 				"Help with openwhisk.",
@@ -13,7 +14,8 @@
         },
         {
             "class": "openwhisk.action.list",
-            "description": "List OpenWisk actions",
+            "description": "List OpenWhisk actions",
+            "confirmprompt": "Would you like to list the OpenWhisk actions (yes or no)?",
             "emittarget": "openwhisk.action.list",
             "texts": [
                 "Show my openwhisk actions",
@@ -23,7 +25,8 @@
         },
         {
             "class": "openwhisk.action.invoke",
-            "description": "Invoke OpenWisk action",
+            "description": "Invoke OpenWhisk action",
+            "confirmprompt": "Would you like to invoke the ${action} OpenWhisk action (yes or no)?",
             "emittarget": "openwhisk.action.invoke",
             "texts": [
                 "Invoke openwhisk action",
@@ -43,7 +46,8 @@
         },
         {
             "class": "openwhisk.namepace.list",
-            "description": "List OpenWisk namespaces",
+            "description": "List OpenWhisk namespaces",
+            "confirmprompt": "Would you like to list the OpenWhisk namespaces (yes or no)?",
             "emittarget": "openwhisk.namespace.list",
             "texts": [
                 "Show my openwhisk namespaces",
@@ -54,7 +58,8 @@
         },
         {
             "class": "openwhisk.namespace.get",
-            "description": "Show current OpenWisk namespace",
+            "description": "Show current OpenWhisk namespace",
+            "confirmprompt": "Would you like to show the current OpenWhisk namespace (yes or no)?",
             "emittarget": "openwhisk.namespace.get",
             "texts": [
                 "What namespace am I in?",
@@ -66,7 +71,8 @@
         },
         {
             "class": "openwhisk.namespace.set",
-            "description": "Change OpenWisk namespace",
+            "description": "Change OpenWhisk namespace",
+            "confirmprompt": "Would you like to change the OpenWhisk namespace to ${namespace} (yes or no)?",
             "emittarget": "openwhisk.namespace.set",
             "texts": [
                 "Set my namespace to",
